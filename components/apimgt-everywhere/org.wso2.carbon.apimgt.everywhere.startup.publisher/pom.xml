@@ -1,0 +1,80 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <parent>
+        <groupId>org.wso2.carbon.apimgt-everywhere</groupId>
+        <artifactId>apimgt-everywhere</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>org.wso2.carbon.apimgt.everywhere.startup.publisher</artifactId>
+    <packaging>bundle</packaging>
+    <name>WSO2 Carbon - API Management Startup Publisher </name>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.wso2.carbon</groupId>
+            <artifactId>org.wso2.carbon.core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.wso2.carbon</groupId>
+            <artifactId>org.wso2.carbon.logging</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.wso2.carbon.apimgt</groupId>
+            <artifactId>org.wso2.carbon.apimgt.impl</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.wso2.carbon.apimgt</groupId>
+            <artifactId>org.wso2.carbon.apimgt.core</artifactId>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <extensions>true</extensions>
+                <configuration>
+                    <instructions>
+                        <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
+                        <Bundle-Name>${project.artifactId}</Bundle-Name>
+                        <Private-Package>
+                            org.wso2.carbon.apimgt.everywhere.startup.publisher.internal,
+                        </Private-Package>
+                        <Export-Package>
+                            !org.wso2.carbon.apimgt.everywhere.startup.publisher.internal,
+                            org.wso2.carbon.apimgt.everywhere.startup.publisher.*,
+                        </Export-Package>
+                        <Import-Package>
+                            org.wso2.carbon.core,
+                            org.wso2.carbon.apimgt.impl.dao.*;version="${carbon.apimgt.version}",
+                            org.wso2.carbon.apimgt.impl.utils.*;version="${carbon.apimgt.version}",
+                            org.wso2.carbon.registry.core.service; version="${carbon.registry.imp.pkg.version}",
+                            javax.xml.soap; version="${javax.xml.soap.imp.pkg.version}",
+                            *;resolution:=optional
+                        </Import-Package>
+                        <!--<Embed-Dependency>
+                            scribe;scope=compile|runtime;inline=false;
+                        </Embed-Dependency>-->
+                        <DynamicImport-Package>*</DynamicImport-Package>
+                    </instructions>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-scr-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>generate-scr-scrdescriptor</id>
+                        <goals>
+                            <goal>scr</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>

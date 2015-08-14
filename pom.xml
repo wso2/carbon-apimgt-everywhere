@@ -1,13 +1,12 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.wso2.carbon.apimgt</groupId>
-    <artifactId>carbon-apimgt</artifactId>
+    <groupId>org.wso2.carbon.apimgt-everywhere</groupId>
+    <artifactId>carbon-apimgt-everywhere</artifactId>
     <packaging>pom</packaging>
-    <version>1.3.4-SNAPSHOT</version>
-    <name>WSO2 Carbon - API Management Aggregator Pom</name>
+    <version>1.0.0-SNAPSHOT</version>
+    <name>WSO2 Carbon - API Management Everywhere Aggregator Pom</name>
     <url>http://wso2.org</url>
-
 
     <parent>
         <groupId>org.wso2</groupId>
@@ -16,15 +15,15 @@
     </parent>
 
     <scm>
-        <url>https://github.com/wso2/carbon-apimgt.git</url>
-        <developerConnection>scm:git:https://github.com/wso2/carbon-apimgt.git</developerConnection>
-        <connection>scm:git:https://github.com/wso2/carbon-apimgt.git</connection>
+        <url>https://github.com/wso2/carbon-apimgt-everywhere.git</url>
+        <developerConnection>scm:git:https://github.com/wso2/carbon-apimgt-everywhere.git</developerConnection>
+        <connection>scm:git:https://github.com/wso2/carbon-apimgt-everywhere.git</connection>
         <tag>HEAD</tag>
     </scm>
 
     <modules>
-        <module>components/apimgt</module>
-        <module>features/apimgt</module>
+        <module>components/apimgt-everywhere</module>
+        <module>features/apimgt-everywhere</module>
     </modules>
 
     <build>
@@ -154,13 +153,37 @@
 
             <dependency>
                 <groupId>org.wso2.carbon.apimgt</groupId>
-                <artifactId>org.wso2.carbon.apimgt.keymgt.stub</artifactId>
+                <artifactId>org.wso2.carbon.apimgt.core</artifactId>
                 <version>${carbon.apimgt.version}</version>
             </dependency>
 
             <dependency>
                 <groupId>org.wso2.carbon.apimgt</groupId>
-                <artifactId>org.wso2.carbon.apimgt.usage.publisher</artifactId>
+                <artifactId>org.wso2.carbon.throttle.core</artifactId>
+                <version>${carbon.apimgt.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.wso2.carbon.apimgt-everywhere</groupId>
+                <artifactId>org.wso2.carbon.apimgt.everywhere.interceptor</artifactId>
+                <version>${carbon.apimgt-everywhere.version}</version>
+            </dependency>
+
+           <dependency>
+                <groupId>org.wso2.carbon.apimgt-everywhere</groupId>
+                <artifactId>org.wso2.carbon.apimgt.everywhere.startup.publisher</artifactId>
+                <version>${carbon.apimgt-everywhere.version}</version>
+            </dependency>
+
+           <dependency>
+                <groupId>org.wso2.carbon.apimgt-everywhere</groupId>
+                <artifactId>org.wso2.carbon.apimgt.everywhere.webapp.publisher</artifactId>
+                <version>${carbon.apimgt-everywhere.version}</version>
+           </dependency>
+
+            <dependency>
+                <groupId>org.wso2.carbon.apimgt</groupId>
+                <artifactId>org.wso2.carbon.apimgt.keymgt.stub</artifactId>
                 <version>${carbon.apimgt.version}</version>
             </dependency>
 
@@ -172,61 +195,13 @@
 
             <dependency>
                 <groupId>org.wso2.carbon.apimgt</groupId>
-                <artifactId>org.wso2.carbon.apimgt.usage.client</artifactId>
-                <version>${carbon.apimgt.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.wso2.carbon.apimgt</groupId>
                 <artifactId>org.wso2.carbon.apimgt.keymgt.client</artifactId>
                 <version>${carbon.apimgt.version}</version>
             </dependency>
 
             <dependency>
                 <groupId>org.wso2.carbon.apimgt</groupId>
-                <artifactId>org.wso2.carbon.apimgt.core</artifactId>
-                <version>${carbon.apimgt.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.wso2.carbon.apimgt</groupId>
-                <artifactId>org.wso2.carbon.apimgt.gateway</artifactId>
-                <version>${carbon.apimgt.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.wso2.carbon.apimgt</groupId>
-                <artifactId>org.wso2.carbon.apimgt.hostobjects</artifactId>
-                <version>${carbon.apimgt.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.wso2.carbon.apimgt</groupId>
-                <artifactId>org.wso2.carbon.apimgt.keymgt</artifactId>
-                <version>${carbon.apimgt.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.wso2.carbon.apimgt</groupId>
-                <artifactId>org.wso2.carbon.apimgt.startup.publisher</artifactId>
-                <version>${carbon.apimgt.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.wso2.carbon.apimgt</groupId>
                 <artifactId>org.wso2.carbon.ganalytics.publisher</artifactId>
-                <version>${carbon.apimgt.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.wso2.carbon.apimgt</groupId>
-                <artifactId>org.wso2.carbon.throttle.core</artifactId>
-                <version>${carbon.apimgt.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.wso2.carbon.apimgt</groupId>
-                <artifactId>org.wso2.carbon.bam.presentation.stub</artifactId>
                 <version>${carbon.apimgt.version}</version>
             </dependency>
 
@@ -249,60 +224,6 @@
             </dependency>
 
             <dependency>
-                <groupId>org.apache.synapse</groupId>
-                <artifactId>synapse-extensions</artifactId>
-                <version>${synapse.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>rhino.wso2</groupId>
-                <artifactId>js</artifactId>
-                <version>${rhino.js.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.owasp.encoder</groupId>
-                <artifactId>encoder</artifactId>
-                <version>${owasp.encoder.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.jaggeryjs</groupId>
-                <artifactId>org.jaggeryjs.hostobjects.web</artifactId>
-                <version>${jaggery.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.jaggeryjs</groupId>
-                <artifactId>org.jaggeryjs.hostobjects.file</artifactId>
-                <version>${jaggery.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.wso2.carbon.commons</groupId>
-                <artifactId>org.wso2.carbon.databridge.agent.thrift</artifactId>
-                <version>${carbon.commons.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.wso2.carbon.multitenancy</groupId>
-                <artifactId>org.wso2.carbon.tenant.usage.agent</artifactId>
-                <version>${carbon.multitenancy.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.wso2.carbon.apimgt</groupId>
-                <artifactId>org.wso2.carbon.apimgt.handlers.security.stub</artifactId>
-                <version>${carbon.apimgt.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.wso2.carbon.apimgt</groupId>
-                <artifactId>org.wso2.carbon.apimgt.interceptor</artifactId>
-                <version>${carbon.apimgt.version}</version>
-            </dependency>
-
-            <dependency>
                 <groupId>org.wso2.carbon</groupId>
                 <artifactId>org.wso2.carbon.authenticator.stub</artifactId>
                 <version>${carbon.kernel.version}</version>
@@ -318,48 +239,6 @@
                 <groupId>org.wso2.carbon</groupId>
                 <artifactId>org.wso2.carbon.utils</artifactId>
                 <version>${carbon.kernel.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.wso2.carbon.commons</groupId>
-                <artifactId>org.wso2.carbon.hostobjects.sso</artifactId>
-                <version>${carbon.commons.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.wso2.carbon.commons</groupId>
-                <artifactId>org.wso2.carbon.event.core</artifactId>
-                <version>${carbon.commons.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.wso2.carbon</groupId>
-                <artifactId>org.wso2.carbon.user.core</artifactId>
-                <version>${carbon.kernel.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.wso2.carbon</groupId>
-                <artifactId>org.wso2.carbon.registry.core</artifactId>
-                <version>${carbon.kernel.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.wso2.carbon.registry</groupId>
-                <artifactId>org.wso2.carbon.registry.ws.client</artifactId>
-                <version>${carbon.registry.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.jaggeryjs</groupId>
-                <artifactId>org.jaggeryjs.scriptengine</artifactId>
-                <version>${jaggery.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.wso2.carbon.governance</groupId>
-                <artifactId>org.wso2.carbon.governance.api</artifactId>
-                <version>${carbon.governance.version}</version>
             </dependency>
 
             <dependency>
@@ -400,12 +279,6 @@
 
             <dependency>
                 <groupId>org.wso2.carbon</groupId>
-                <artifactId>org.wso2.carbon.registry.api</artifactId>
-                <version>${carbon.kernel.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.wso2.carbon</groupId>
                 <artifactId>org.wso2.carbon.core</artifactId>
                 <version>${carbon.kernel.version}</version>
             </dependency>
@@ -423,128 +296,9 @@
             </dependency>
 
             <dependency>
-                <groupId>org.wso2.carbon.mediation</groupId>
-                <artifactId>org.wso2.carbon.rest.api.stub</artifactId>
-                <version>${carbon.mediation.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.apache.synapse</groupId>
-                <artifactId>synapse-core</artifactId>
-                <version>${synapse.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.wso2.carbon.mediation</groupId>
-                <artifactId>org.wso2.carbon.mediation.dependency.mgt</artifactId>
-                <version>${carbon.mediation.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.wso2.carbon.mediation</groupId>
-                <artifactId>org.wso2.carbon.sequences.stub</artifactId>
-                <version>${carbon.mediation.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.wso2.carbon.mediation</groupId>
-                <artifactId>org.wso2.carbon.mediation.registry</artifactId>
-                <version>${carbon.mediation.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.wso2.carbon.mediation</groupId>
-                <artifactId>org.wso2.carbon.mediation.initializer</artifactId>
-                <version>${carbon.mediation.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.wso2.carbon.mediation</groupId>
-                <artifactId>org.wso2.carbon.mediation.security.stub</artifactId>
-                <version>${carbon.kernel.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.wso2.carbon.registry</groupId>
-                <artifactId>org.wso2.carbon.registry.indexing</artifactId>
-                <version>${carbon.registry.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.wso2.carbon.identity</groupId>
-                <artifactId>org.wso2.carbon.identity.core</artifactId>
-                <version>${identity.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.wso2.carbon.identity</groupId>
-                <artifactId>org.wso2.carbon.identity.oauth</artifactId>
-                <version>${identity.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.wso2.carbon.identity</groupId>
-                <artifactId>org.wso2.carbon.identity.user.registration.stub</artifactId>
-                <version>${identity.version}</version>
-            </dependency>
-
-            <dependency>
                 <groupId>commons-io.wso2</groupId>
                 <artifactId>commons-io</artifactId>
                 <version>${commons-io.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.wso2.carbon.commons</groupId>
-                <artifactId>org.wso2.carbon.user.mgt.stub</artifactId>
-                <version>${carbon.commons.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.wso2.carbon.commons</groupId>
-                <artifactId>org.wso2.carbon.um.ws.api</artifactId>
-                <version>${carbon.commons.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.wso2.carbon.identity</groupId>
-                <artifactId>org.wso2.carbon.identity.thrift.authentication</artifactId>
-                <version>${identity.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.wso2.carbon.apimgt</groupId>
-                <artifactId>org.wso2.carbon.apimgt.core.feature</artifactId>
-                <version>${carbon.apimgt.version}</version>
-                <type>zip</type>
-            </dependency>
-
-            <dependency>
-                <groupId>org.wso2.carbon.apimgt</groupId>
-                <artifactId>org.wso2.carbon.apimgt.gateway.feature</artifactId>
-                <version>${carbon.apimgt.version}</version>
-                <type>zip</type>
-            </dependency>
-
-            <dependency>
-                <groupId>org.wso2.carbon.apimgt</groupId>
-                <artifactId>org.wso2.carbon.apimgt.store.feature</artifactId>
-                <version>${carbon.apimgt.version}</version>
-                <type>zip</type>
-            </dependency>
-
-            <dependency>
-                <groupId>org.wso2.carbon.apimgt</groupId>
-                <artifactId>org.wso2.carbon.apimgt.publisher.feature</artifactId>
-                <version>${carbon.apimgt.version}</version>
-                <type>zip</type>
-            </dependency>
-
-            <dependency>
-                <groupId>org.wso2.carbon.apimgt</groupId>
-                <artifactId>org.wso2.carbon.apimgt.startup.publisher.feature</artifactId>
-                <version>${carbon.apimgt.version}</version>
-                <type>zip</type>
             </dependency>
 
             <dependency>
@@ -572,19 +326,6 @@
             </dependency>
 
             <dependency>
-                <groupId>org.wso2.carbon.apimgt</groupId>
-                <artifactId>org.wso2.carbon.forum</artifactId>
-                <version>${carbon.apimgt.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.wso2.carbon.apimgt</groupId>
-                <artifactId>org.wso2.carbon.forum.server.feature</artifactId>
-                <version>${carbon.apimgt.version}</version>
-                <type>zip</type>
-            </dependency>
-
-            <dependency>
                 <groupId>org.json.wso2</groupId>
                 <artifactId>json</artifactId>
                 <version>${orbit.version.json}</version>
@@ -609,24 +350,6 @@
             </dependency>
 
             <dependency>
-                <groupId>org.wso2.carbon</groupId>
-                <artifactId>org.wso2.carbon.application.deployer</artifactId>
-                <version>${carbon.kernel.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.wso2.carbon</groupId>
-                <artifactId>org.wso2.carbon.securevault</artifactId>
-                <version>${carbon.kernel.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.wso2.carbon</groupId>
-                <artifactId>org.wso2.carbon.user.api</artifactId>
-                <version>${carbon.kernel.version}</version>
-            </dependency>
-
-            <dependency>
                 <groupId>junit</groupId>
                 <artifactId>junit</artifactId>
                 <version>${junit.version}</version>
@@ -644,6 +367,18 @@
                 <artifactId>Saxon-HE</artifactId>
                 <version>${Saxon-HE.version}</version>
             </dependency>
+
+            <dependency>
+                <groupId>org.wso2.scannotation</groupId>
+                <artifactId>scannotation</artifactId>
+                <version>${scannotation.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.wso2.carbon.deployment</groupId>
+                <artifactId>org.wso2.carbon.webapp.mgt</artifactId>
+                <version>${carbon.deployment.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
@@ -651,8 +386,18 @@
         <project.scm.id>my-scm-server</project.scm.id>
 
         <!-- APIM Component Version -->
-        <carbon.apimgt.version>1.3.4-SNAPSHOT</carbon.apimgt.version>
+        <carbon.apimgt.version>1.4.0</carbon.apimgt.version>
         <carbon.apimgt.imp.pkg.version>[1.3.0, 2.0.0)</carbon.apimgt.imp.pkg.version>
+
+        <!-- APIM Everywhere Component Version -->
+        <carbon.apimgt-everywhere.version>1.0.0-SNAPSHOT</carbon.apimgt-everywhere.version>
+        <carbon.apimgt-everywhere.imp.pkg.version>[1.0.0, 2.0.0)</carbon.apimgt-everywhere.imp.pkg.version>
+
+        <!-- Carbon Deployment Version -->
+        <carbon.deployment.version>4.4.0</carbon.deployment.version>
+        <carbon.deployment.imp.pkg.version>[4.0.0, 5.0.0)</carbon.deployment.imp.pkg.version>
+
+        <scannotation.version>1.0.3.wso2v1</scannotation.version>
 
         <!-- Carbon kernel version -->
         <carbon.kernel.version>4.3.0</carbon.kernel.version>

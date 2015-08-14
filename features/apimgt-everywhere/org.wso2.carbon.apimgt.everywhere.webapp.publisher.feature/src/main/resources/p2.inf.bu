@@ -1,0 +1,11 @@
+instructions.configure = \
+org.wso2.carbon.p2.touchpoint.addXMLElement(file:${installFolder}/../../../repository/conf/tomcat/context.xml,xpath:/Context,element:<Listener className="APIPublisherLifecycleListener"/>); \
+
+
+
+
+
+
+
+
+
