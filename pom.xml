@@ -450,7 +450,7 @@
         <commons-io.version>2.0.0.wso2v1</commons-io.version>
         <commons-lang.version>2.6.0.wso2v1</commons-lang.version>
         <apache.woden.version>1.0.0.M9-wso2v1</apache.woden.version>
-        <apache.poi.version>3.9</apache.poi.version>
+        <apache.poi.version>4.0.1</apache.poi.version>
         <rhino.js.version>1.7.0.R4.wso2v1</rhino.js.version>
         <owasp.encoder.version>1.1</owasp.encoder.version>
         <httpclient.version>4.1.1-wso2v1</httpclient.version>
