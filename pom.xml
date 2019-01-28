@@ -421,7 +421,7 @@
         <carbon.p2.plugin.version>1.5.3</carbon.p2.plugin.version>
 
         <maven-scr-plugin.version>1.7.2</maven-scr-plugin.version>
-        <maven-bundle-plugin.version>2.5.3</maven-bundle-plugin.version>
+        <maven-bundle-plugin.version>4.1.0</maven-bundle-plugin.version>
 
         <!-- Axis2 Version -->
         <orbit.version.axis2>1.6.1.wso2v11</orbit.version.axis2>
