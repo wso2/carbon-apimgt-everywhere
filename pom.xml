@@ -428,7 +428,7 @@
         <axis2.osgi.version.range>[1.6.1.wso2v11, 1.7.0)</axis2.osgi.version.range>
 
         <!-- Apache Axiom -->
-        <axiom.version>1.2.11-wso2v5</axiom.version>
+        <axiom.version>1.2.22</axiom.version>
         <orbit.version.axiom>1.2.11.wso2v5</orbit.version.axiom>
         <axiom.osgi.version.range>[1.2.11.wso2v5, 1.3.0)</axiom.osgi.version.range>
         <version.axiom>1.2.11-wso2v5</version.axiom>
