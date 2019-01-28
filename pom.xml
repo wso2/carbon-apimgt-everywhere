@@ -394,7 +394,7 @@
         <carbon.apimgt-everywhere.imp.pkg.version>[1.0.0, 2.0.0)</carbon.apimgt-everywhere.imp.pkg.version>
 
         <!-- Carbon Deployment Version -->
-        <carbon.deployment.version>4.4.0</carbon.deployment.version>
+        <carbon.deployment.version>4.7.19</carbon.deployment.version>
         <carbon.deployment.imp.pkg.version>[4.0.0, 5.0.0)</carbon.deployment.imp.pkg.version>
 
         <scannotation.version>1.0.3.wso2v1</scannotation.version>
